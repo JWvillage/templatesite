@@ -12,14 +12,16 @@ const SlideImg: React.FC<Props> = ({ imgList }) => {
   React.useEffect(() => {
     const c = document.getElementsByTagName("img")[0];
     c.style.display = "flex";
+    // console.log("first : ", count);
   }, []);
 
   React.useEffect(() => {
+    // console.log("second : ", count);
     if (customInterVal !== 10000) {
-      let cur_count = count;
+      // console.log("third : ", count);
       const transTimer = setInterval(() => {
-        if (cur_count < imgList.length - 1) {
-          setCount((cur_count) => cur_count + 1);
+        if (count < imgList.length - 1) {
+          setCount((count) => count + 1);
         } else {
           setCount(0);
         }
@@ -30,18 +32,19 @@ const SlideImg: React.FC<Props> = ({ imgList }) => {
       }
       const showImg = document.getElementsByTagName("img")[count];
       showImg.style.display = "flex";
-      // console.log(showImg);
       return () => {
+        // console.log("fourth : ", count);
         clearInterval(transTimer);
       };
     } else {
-      setCount((cur_count) => cur_count);
+      setCount((count) => count);
     }
   }, [count, customInterVal]);
 
   const btnImg = (el: any) => {
-    console.log(el.target.value);
-    setCount(el.target.value);
+    // console.log(el.target.value);
+    const val: number = parseInt(el.target.value);
+    setCount(val);
   };
 
   return (
