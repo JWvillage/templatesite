@@ -18,6 +18,9 @@ li {
 .ml {
   display: flex;
   margin-top: 30px;
+  border: 0.05px solid #ccc;
+  border-radius: 5px;
+  width: 1080px;
 }
 
 .ml .ml_left {
@@ -25,29 +28,52 @@ li {
   flex-direction: column;
   background-color: #222;
   width: 200px;
-  height: 300px;
+  height: 345px;
   padding: 10px 0 20px 0;
   border-radius: 5px 0 0 5px;
+  line-height: 19px;
 }
 
 .ml .ml_left .link {
   color: white;
   padding: 5px 0 5px 15px;
   font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
 }
 
 .ml .ml_left .link:hover {
   background-color: white;
   color: black;
   font-weight: 600;
+  line-height: 19px;
 }
 
-.ml_right {
+.ml .ml_right {
   display: flex;
-  width: 800px;
-  height: 330px;
+  width: 880px;
+  height: 375px;
   border-radius: 0 5px 5px 0;
   background-color: antiquewhite;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
+}
+
+.ml .ml_right .l_content {
+  z-index: 9999;
+  position: fixed;
+  display: flex;
+  background-color: #fff;
+  width: 500px;
+  height: 375px;
+}
+
+.tab_Img {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  justify-content: center;
+  width: 880px;
+  height: 375px;
+  border-radius: 0 5px 5px 0;
 }
